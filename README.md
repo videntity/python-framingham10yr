@@ -19,9 +19,9 @@ Using the Command Line Tool
 This assumes you have a Python installed.  If you are on a Mac or Linux you
 should be good to go.
 
-Usage:
+Usage
     > framingham.py <sex> <age> <total_cholesterol> <hdl_cholesterol systolic_blood_pressure> <smoker> <blood_pressure_med_treatment>
-Example:
+Example
     > framingham.py male 25 152 56 130 0 0
 
 
