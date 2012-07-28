@@ -9,7 +9,7 @@ Installation
 ------------
 
 Use pip to install the parser.
-::
+
     pip install python-framingham10yr
 
 
