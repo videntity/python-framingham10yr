@@ -5,6 +5,7 @@
 # Copyright Videnty Systems Inc, 2012 videntity.com
 # Apache 2 License
 
+
 import sys, json
 
 
@@ -46,9 +47,17 @@ def framingham_10year_risk(sex, age, total_cholesterol, hdl_cholesterol,
     total_cholesterol = int(total_cholesterol)
     hdl_cholesterol = int(hdl_cholesterol)
     systolic_blood_pressure = int(systolic_blood_pressure)
-    smoker = bool(int(smoker))
-    blood_pressure_med_treatment = bool(int(blood_pressure_med_treatment))
     
+    try:
+        blood_pressure_med_treatment = bool(int(blood_pressure_med_treatment))
+    except(ValueError):
+        errors.append("Blood pressure medication treatment must be set to True, False, 1 or 0.")
+    
+    try:
+        smoker = bool(int(smoker))
+    except(ValueError):
+        errors.append("Smoker must be set to True, False, 1, or 0.")
+        
     
     # Intitalize our response dictionary
     response = {"status": 200,
