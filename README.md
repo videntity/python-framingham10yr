@@ -51,7 +51,7 @@ Detecting Errors
 
     >>> result = framingham_10year_risk(sex="male-to-female-transgender", age=16, total_cholesterol=500, hdl_cholesterol=300,  systolic_blood_pressure=20, smoker="foo", blood_pressure_med_treatment="bar")
     >>> print result["status"], result["message"]
-    422 The reuest contained errors and was unable to process.
+    422 The request contained errors and was unable to process.
     >>> print result['errors']
     ['Blood pressure medication treatment must be set to True, False, 1 or 0.',
         'Smoker must be set to True, False, 1, or 0.',

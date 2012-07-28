@@ -445,7 +445,7 @@ def framingham_10year_risk(sex, age, total_cholesterol, hdl_cholesterol,
 
     if errors:
         response['status']=422
-        response['message'] = "The reuest contained errors and was unable to process."
+        response['message'] = "The request contained errors and was unable to process."
         response['errors']=errors
     else:
         response['points']=points
