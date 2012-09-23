@@ -67,7 +67,7 @@ if len(sys.argv) > 1 and sys.argv[1] == 'bdist_wininst':
 
 
 setup(name="python-framingham10yr",
-      version="0.1.2",
+      version="0.1.3",
       description="Framingham 10 year Cardic Risk Calculator",
       long_description="""Risk Assessment Tool for Estimating 10-year Risk of Having a Heart Attack""",
       author="Alan Viars",
