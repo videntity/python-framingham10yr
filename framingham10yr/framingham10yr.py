@@ -31,13 +31,18 @@ def framingham_10year_risk(sex, age, total_cholesterol, hdl_cholesterol,
     """
     
     #be liberal in what we accept...massage the input
-    if smoker in ("true", "t"):
+    if sex in ("MALE", "m", "M", "boy", "xy", "male", "Male"):
+        sex = "male"
+    if sex in ("FEMALE", "f", "F", "girl", "xx", "female", "Female"):
+        sex = "female"    
+    
+    if smoker in ("true", "t", "True", True, 1, "1"):
         smoker=True
-    if smoker in ("false", "f"):
+    if smoker in ("false", "f", "False", False, 0, "0"):
         smoker=False
-    if  blood_pressure_med_treatment in ("true", "t"):
+    if  blood_pressure_med_treatment in ("true", "t", "True", True, 1, "1"):
         blood_pressure_med_treatment = True
-    if  blood_pressure_med_treatment  in ("false", "f"):
+    if  blood_pressure_med_treatment  in ("false", "f", "False", False, 0, "0"):
         blood_pressure_med_treatment = False
 
     #intialize some things -----------------------------------------------------
@@ -61,6 +66,7 @@ def framingham_10year_risk(sex, age, total_cholesterol, hdl_cholesterol,
     
     # Intitalize our response dictionary
     response = {"status": 200,
+                "sex":sex,
                 "message": "OK",
                 "age": age,
                 "total_cholesterol": total_cholesterol,  
