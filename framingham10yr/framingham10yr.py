@@ -36,13 +36,15 @@ def framingham_10year_risk(sex, age, total_cholesterol, hdl_cholesterol,
     if sex in ("FEMALE", "f", "F", "girl", "xx", "female", "Female"):
         sex = "female"    
     
-    if smoker in ("true", "t", "True", True, 1, "1"):
+    if smoker in ("yes", "Y", "y", "YES", "true", "t", "True", True, 1, "1"):
         smoker=True
-    if smoker in ("false", "f", "False", False, 0, "0"):
+    if smoker in ("no", "NO", "N", "n", "false", "f", "False", False, 0, "0"):
         smoker=False
-    if  blood_pressure_med_treatment in ("true", "t", "True", True, 1, "1"):
+    if  blood_pressure_med_treatment in ("yes", "Y", "y", "YES", "true", "t",
+                                         "True", True, 1, "1"):
         blood_pressure_med_treatment = True
-    if  blood_pressure_med_treatment  in ("false", "f", "False", False, 0, "0"):
+    if  blood_pressure_med_treatment  in ("no", "NO", "N", "n", "false", "f",
+                                          "False", False, 0, "0"):
         blood_pressure_med_treatment = False
 
     #intialize some things -----------------------------------------------------
@@ -56,12 +58,12 @@ def framingham_10year_risk(sex, age, total_cholesterol, hdl_cholesterol,
     try:
         blood_pressure_med_treatment = bool(int(blood_pressure_med_treatment))
     except(ValueError):
-        errors.append("Blood pressure medication treatment must be set to True, False, 1 or 0.")
+        errors.append("Blood pressure medication treatment must be set to True, False, 1, 0, yes, or no.")
     
     try:
         smoker = bool(int(smoker))
     except(ValueError):
-        errors.append("Smoker must be set to True, False, 1, or 0.")
+        errors.append("Smoker must be set to True, False, 1, 0, yes, or no.")
         
     
     # Intitalize our response dictionary
